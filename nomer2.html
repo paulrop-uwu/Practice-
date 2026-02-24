@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Практика: Стили и селекторы</title>
+
+    <style>
+        @import url('styles.css');
+    </style>
+
+    <style>
+        .internal-block {
+            background-color: #e0f7fa;
+            padding: 15px;
+            border-left: 5px solid #00796b;
+            margin-top: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .internal-block h2 {
+            color: #00796b;
+            margin-top: 0;
+        }
+        .internal-block ul {
+            list-style-type: square;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Демонстрация работы со стилями</h1>
+
+    <div class="external-block">
+        <h2>1. Внешние стили (через import)</h2>
+        <p>Этот блок оформлен с помощью правил из внешнего файла <strong>style.css</strong>, который подключен через директиву <code>@import</code>.</p>
+        <p>Цвет фона, границы и шрифт заданы в отдельном файле.</p>
+    </div>
+
+    <div class="internal-block">
+        <h2>2. Внутренние стили</h2>
+        <p>Оформление этого блока (фон, рамка, шрифт) задано внутри тега <code>&lt;style&gt;</code> в разделе <code>&lt;head&gt;</code> документа.</p>
+        <ul>
+            <li>Первый пункт</li>
+            <li>Второй пункт</li>
+            <li>Третий пункт</li>
+        </ul>
+    </div>
+
+    <div style="background-color: #fff3e0; padding: 15px; border: 2px dashed #ff9800; margin-top: 20px; font-family: 'Courier New', monospace;">
+        <h2 style="color: #e65100; margin-top: 0;">3. Встроенные стили</h2>
+        <p style="font-size: 1.1em; line-height: 1.4;">Весь дизайн этого блока (цвета, рамка, шрифт) задан непосредственно в атрибутах <code>style</code> у каждого тега.</p>
+        <p style="font-weight: bold;">Этот текст жирный, потому что так прописано в атрибуте style у абзаца.</p>
+    </div>
+
+    <div class="pseudo-block">
+        <h2>4. Псевдоклассы и псевдоэлементы</h2>
+        <p>Наведи курсор на ссылки и на кнопку ниже, чтобы увидеть псевдоклассы в действии.</p>
+
+        <h3>Псевдоклассы:</h3>
+        <ul>
+            <li><a href="#" class="pseudo-link">:hover и :active</a> (наведи и нажми на меня)</li>
+            <li><a href="#" class="pseudo-visited">:visited</a> (перейди по мне и вернись обратно)</li>
+        </ul>
+
+        <h3>Псевдоэлементы:</h3>
+        <p class="first-line">Этот текст демонстрирует работу псевдоэлемента ::first-line. Первая строка этого текста будет красной и заглавной, независимо от того, как вы измените размер окна. Остальные строки останутся обычными.</p>
+        <p class="first-letter">Этот текст демонстрирует работу псевдоэлемента ::first-letter. Первая буква этого абзаца будет большой, красной и с рамкой.</p>
+    </div>
+
+</body>
+</html>
